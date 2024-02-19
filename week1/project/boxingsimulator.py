@@ -33,7 +33,7 @@ if __name__ == "__main__":
                 my_point+=arrays[type_input-1][random_number-1]
                 cpu_point += (0- arrays[type_input-1][random_number - 1])
 
-                print("my punch number is: " + str(type_input))
+                print("My punch number is: " + str(type_input))
                 print("computer punsh num is: "+ str(random_number))
                 print("my point is "+ str(my_point))
                 print("cpu_point  is " + str(cpu_point))
