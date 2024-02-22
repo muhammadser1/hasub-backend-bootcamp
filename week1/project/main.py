@@ -1,8 +1,10 @@
+def square_generator(limit):
+    num = 1
+    while num <= limit:
+        yield num ** 2
+        num += 1
 
-
-for i in range (10):
-    for j in range(10):
-        if i%2==0:
-            print(j)
-            break
-    print("hi")
+# Example usage:
+generator = square_generator(5)
+for square in generator:
+    print(square)
