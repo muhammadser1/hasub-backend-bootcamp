@@ -1,3 +1,7 @@
+### where is the ui option to break robot? in the main menu you say its possible, but then inside the sub menu there is only sell and repair
+### if 
+
+
 import random
 import time
 day_time = 30
@@ -24,6 +28,7 @@ class for_Sale_Robot(Robot,Robot_Pet):
         Robot.__init__(self, name, id, battery_type)
         Robot_Pet.__init__(self, main_material, animal_type)
         self.price = price
+### dry - why not put the status of the robot in the main robot class?
 class Sold_Robot(Robot,Robot_Pet):
     def __init__(self, name, id, battery_type, main_material, price, animal_type):
         Robot.__init__(self, name, id, battery_type)
@@ -94,6 +99,7 @@ class Shop():
                 repair = In_RePair_Robot("repair_"+str(i), i, list[2][random_number], list[0][random_number],list[1][random_number], random.randint(1, 10))
                 self.in_repair_robots.append(repair)
     def calculate_balance(self):
+        ### better to keep it in the state, and updated it when the operation happens, and not after the fact
         current_time = time.time()
         for employee in self.list_employee:
             delta_time = int(current_time - employee.start_time)
