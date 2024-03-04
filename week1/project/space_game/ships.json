@@ -1,0 +1,6 @@
+[
+    {"name": "Enterprise", "place": "Earth", "health": 70, "fuel": 130},
+    {"name": "Millennium Falcon", "place": "Earth", "health": 90, "fuel": 110},
+    {"name": "Serenity", "place": "Earth", "health": 80, "fuel": 120},
+    {"name": "TARDIS", "place": "Earth", "health": 100, "fuel": 100}
+]
