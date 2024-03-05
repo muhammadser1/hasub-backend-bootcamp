@@ -24,7 +24,7 @@ class Url_Scraper:
 
         return self.soup
 
-    def extract_name_and_description(self):
+    def extract_name_and_description(self): # extract the titles and descriptions
         if self.soup is None:
             print("HTML not parsed.")
             return None
@@ -38,7 +38,7 @@ class Url_Scraper:
             return extract_game_details(items_names, target_div_list)
 
 
-def extract_game_details(items_names, target_div_list):
+def extract_game_details(items_names, target_div_list): # this function extracts  details about each gamebased on the provided HTML elements and organizes this information into a dictionary.
     game_content = {}
     for i in range(len(items_names)):
         description = ""
