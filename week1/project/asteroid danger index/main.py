@@ -10,6 +10,17 @@ from datetime import datetime, timedelta
 
 
 async def process_and_store_data(start_time, date, filename):
+    """Asynchronously fetches asteroid data, processes it, and stores it in a JSON file.
+
+    Args:
+        start_time (str): The start time of the process.
+        date (str): The date in "YYYY-MM-DD" format.
+        filename (str): The name of the JSON file to store the data.
+        api_key (str): The API key for accessing the NASA API.
+
+    Returns:
+        None
+    """
     original_date = datetime.strptime(date, "%Y-%m-%d")
     new_date = original_date + timedelta(days=7)
     new_date = new_date.strftime("%Y-%m-%d")
@@ -22,6 +33,8 @@ async def process_and_store_data(start_time, date, filename):
 
 
 async def fun():
+    """Runs asynchronous  4 tasks to fetch and store asteroid data."""
+
     start_time = time.time()
     task1 = asyncio.create_task(process_and_store_data(start_time,"2015-09-01", "response_data1.json"))
     task2 = asyncio.create_task(process_and_store_data(start_time,"2015-09-08", "response_data2.json"))
@@ -31,6 +44,7 @@ async def fun():
 
 
 if __name__ == '__main__':
+    # Reading the API key from the txt file
     api_key_nasa = ApiKeyReader("nasa_ipi_key.txt")
     api_key_nasa = api_key_nasa.read_api_key()
 
@@ -42,7 +56,7 @@ if __name__ == '__main__':
     data3 = JSONHandler.read_data_from_json("response_data3.json")
     data4 = JSONHandler.read_data_from_json("response_data4.json")
     data=data1+data2+data3+data4
-    print(len(data1))
+
     a = int(input("Enter the value of parameter A: "))
     b = int(input("Enter the value of parameter B: "))
     c = int(input("Enter the value of parameter C: "))

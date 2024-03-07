@@ -5,6 +5,16 @@ from datetime import datetime, timedelta
 class JSONHandler:
     @staticmethod
     def write_data_to_json(data, filename, date):
+        """Write processed data to a JSON file.
+
+        Args:
+            data (dict): Processed data to be written to the JSON file.
+            filename (str): Name of the JSON file to write.
+            date (str): Date string used for processing data.
+
+        Returns:
+            None
+        """
         processed_data = []
 
         for i in range(7):
@@ -27,7 +37,15 @@ class JSONHandler:
 
     @staticmethod
     def read_data_from_json(filename):
-        # Read data from JSON file
+        """Read data from a JSON file.
+
+        Args:
+            filename (str): Name of the JSON file to read.
+
+        Returns:
+            dict: Data read from the JSON file.
+        """
+
         with open(filename, 'r') as json_file:
             data = json.load(json_file)
         return data
