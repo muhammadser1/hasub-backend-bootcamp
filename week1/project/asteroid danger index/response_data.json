@@ -1,0 +1,114 @@
+[
+    {
+        "id": "2440012",
+        "name": "440012 (2002 LE27)",
+        "est diameter min": 0.3180936332,
+        "est diameter max": 0.7112789871,
+        "miss_distance": "74525035.840942964",
+        "relative_velocity": "4187.1034988155"
+    },
+    {
+        "id": "3713989",
+        "name": "(2015 FC35)",
+        "est diameter min": 0.0987540639,
+        "est diameter max": 0.2208207999,
+        "miss_distance": "48077022.457470529",
+        "relative_velocity": "31548.7181977204"
+    },
+    {
+        "id": "3726788",
+        "name": "(2015 RG2)",
+        "est diameter min": 0.0121494041,
+        "est diameter max": 0.0271668934,
+        "miss_distance": "2450214.654065658",
+        "relative_velocity": "29113.7972136669"
+    },
+    {
+        "id": "3727036",
+        "name": "(2015 RL35)",
+        "est diameter min": 0.0146067964,
+        "est diameter max": 0.0326617897,
+        "miss_distance": "10359193.665872923",
+        "relative_velocity": "12661.0618226584"
+    },
+    {
+        "id": "3727179",
+        "name": "(2015 RH36)",
+        "est diameter min": 0.0506471459,
+        "est diameter max": 0.1132504611,
+        "miss_distance": "16356725.896225626",
+        "relative_velocity": "26178.3406398515"
+    },
+    {
+        "id": "3727662",
+        "name": "(2015 RX83)",
+        "est diameter min": 0.0699125232,
+        "est diameter max": 0.1563291544,
+        "miss_distance": "43320793.722666844",
+        "relative_velocity": "9700.4054267199"
+    },
+    {
+        "id": "3727663",
+        "name": "(2015 RY83)",
+        "est diameter min": 0.0384197891,
+        "est diameter max": 0.0859092601,
+        "miss_distance": "11442728.839194234",
+        "relative_velocity": "25128.8978914704"
+    },
+    {
+        "id": "3759353",
+        "name": "(2016 RU33)",
+        "est diameter min": 0.008405334,
+        "est diameter max": 0.0187948982,
+        "miss_distance": "33966068.133246049",
+        "relative_velocity": "47572.1706482885"
+    },
+    {
+        "id": "3759690",
+        "name": "(2016 RN41)",
+        "est diameter min": 0.001661709,
+        "est diameter max": 0.0037156943,
+        "miss_distance": "18031340.714294095",
+        "relative_velocity": "48533.5778505242"
+    },
+    {
+        "id": "3827337",
+        "name": "(2018 RZ2)",
+        "est diameter min": 0.096506147,
+        "est diameter max": 0.2157943048,
+        "miss_distance": "62701736.468136927",
+        "relative_velocity": "66647.8557106394"
+    },
+    {
+        "id": "3843641",
+        "name": "(2019 QK4)",
+        "est diameter min": 0.1925550782,
+        "est diameter max": 0.4305662442,
+        "miss_distance": "50503662.791031385",
+        "relative_velocity": "137863.314414063"
+    },
+    {
+        "id": "3986741",
+        "name": "(2020 BY)",
+        "est diameter min": 0.0334622374,
+        "est diameter max": 0.0748238376,
+        "miss_distance": "60851422.512182764",
+        "relative_velocity": "97883.7299230601"
+    },
+    {
+        "id": "54088823",
+        "name": "(2020 WZ)",
+        "est diameter min": 0.0110803882,
+        "est diameter max": 0.0247765013,
+        "miss_distance": "69144636.96606024",
+        "relative_velocity": "72279.8474933128"
+    },
+    {
+        "id": "54426080",
+        "name": "(2024 CU2)",
+        "est diameter min": 0.0565659358,
+        "est diameter max": 0.1264852778,
+        "miss_distance": "39499570.375096909",
+        "relative_velocity": "51748.8807943588"
+    }
+]
