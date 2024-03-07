@@ -1,0 +1,5 @@
+I have a Game class, which will serve as the logic loop of the game.
+Additionally, I have an Event class, with subclasses inheriting from it.
+Each subclass, such as 'black_hole', contains a 'revolve' function responsible for handling player decisions.
+ Subsequently, I extract parameters and update the status in the Game class. For each round,
+  I record the event and the ship's status after the event occurs in JSON format.
