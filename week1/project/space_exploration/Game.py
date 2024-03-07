@@ -1,4 +1,6 @@
 import random
+import time
+day_time = 30
 
 
 class Game:
@@ -7,6 +9,7 @@ class Game:
         self.ship=ship
         self.game_over = 0
         self.data=[]
+        self.start_time = time.time()
     def start(self):
         print("Starting the game!")
         while not self.game_over and self.ship.health>0 and self.ship.fuel>0:
@@ -39,3 +42,7 @@ class Game:
         self.ship.health-=dmg
         self.ship.fuel -= fuel
         self.ship.coin += coin
+        current_time = time.time()
+        delta_time = int(current_time - self.start_time)
+        delta_time = delta_time / day_time
+        self.ship.fuel -= delta_time * 2
