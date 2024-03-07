@@ -14,6 +14,7 @@ class Url_Scraper:
             print("Success to fetch data from the Steam store.")
         else:
             print("Failed to fetch data from the Steam store.")
+
         return self.response
 
     def parse_html(self):
@@ -21,7 +22,6 @@ class Url_Scraper:
             print("Data not fetched")
         else:
             self.soup = BeautifulSoup(self.response.text, 'html.parser')
-
         return self.soup
 
     def extract_name_and_description(self): # extract the titles and descriptions
@@ -35,6 +35,7 @@ class Url_Scraper:
                 return None
             items_names = new_releases_section.findAll(class_="tab_item_name")  # 30
             target_div_list = new_releases_section.findAll(class_="tab_item_content")
+            print(items_names)
             return extract_game_details(items_names, target_div_list)
 
 

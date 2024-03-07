@@ -1,39 +1,22 @@
-import queue
+import asyncio
+import time
 
-def task(name, queue):
-    while not queue.empty():
-        count = queue.get()
-        total = 0
-        print(f"Task {name} running")
-        for x in range(count):
-            total += 1
-            yield
-        print(f"Task {name} total: {total}")
+async def count(start_time,start, end):
 
-def main():
+    for i in range(start, end + 1):
+        print(i)
+        await asyncio.sleep(0.1)  # Simulate some asynchronous work
+    elapsed_time = time.time() - start_time
+    print(f"Task for range {start}-{end} completed in {elapsed_time:.2f} seconds.")
 
-    work_queue = queue.Queue()
-    for work in [15, 10, 5, 2]:
-        work_queue.put(work)
-    tasks = [task("One", work_queue), task("Two", work_queue)]
+async def main():
+    start_time = time.time()
+    # Create two tasks for counting
+    task1 = asyncio.create_task(count(start_time,1, 50))
+    task2 = asyncio.create_task(count(start_time,51, 100))
 
-    done = False
-    while not done:
-        for t in tasks:
-            try:
-                next(t)
-            except StopIteration:
-                tasks.remove(t)
-            if len(tasks) == 0:
-                done = True
+    # Wait for both tasks to complete
+    await asyncio.gather(task1, task2)
 
 if __name__ == "__main__":
-    main()
-##coperative:In this cooperative threading example, there are two threads (thread1 and thread2).
-# Each thread takes a task from the queue and processes it until there are no more tasks left.
-# If one thread finishes its task before the other, it can proceed to take another task from the queue without waiting for the other thread to finish.
-# This behavior is facilitated by a lock (lock) to ensure thread-safe access to the queue.
-
-
-
-
+    asyncio.run(main())

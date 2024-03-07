@@ -14,7 +14,9 @@ class GraphPlotter:
         max_diameter = []
         danger=[]
         name=[]
-        for asteroid in data:
+        total_data = len(data)
+        quarter_data = data[:total_data // 10]
+        for asteroid in quarter_data:
             min_diamete.append(asteroid["est diameter min"])
             velocity.append(asteroid["relative_velocity"])
 
