@@ -1,0 +1,12 @@
+2024-03-11 13:09:18,830 - INFO - Addition: 5 + 3 = 8
+2024-03-11 13:09:18,830 - INFO - Subtraction: 10 - 4 = 6
+2024-03-11 13:09:18,830 - INFO - Multiplication: 6 * 2 = 12
+2024-03-11 13:09:18,830 - INFO - Division: 10 / 2 = 5.0
+2024-03-11 13:09:40,458 - INFO - Addition: 5 + 3 = 8
+2024-03-11 13:09:40,458 - INFO - Subtraction: 10 - 4 = 6
+2024-03-11 13:09:40,458 - INFO - Multiplication: 6 * 2 = 12
+2024-03-11 13:09:40,458 - ERROR - Division by zero!
+2024-03-11 13:10:10,065 - INFO - Addition: 5 + 3 = 8
+2024-03-11 13:10:10,065 - INFO - Subtraction: 10 - 4 = 6
+2024-03-11 13:10:10,066 - INFO - Multiplication: 6 * 2 = 12
+2024-03-11 13:10:10,067 - ERROR - Division by zero!
