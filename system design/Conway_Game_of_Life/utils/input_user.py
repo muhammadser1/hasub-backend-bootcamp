@@ -1,12 +1,4 @@
-# input_user.py
-
-import logging
-
-# Configure logging
-logging.basicConfig(filename='input.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-
-def get_integer_input(msg_to_show: str, min_value=None, max_value=None) -> int:
+def get_integer_input(msg_to_show:str, min_value=None, max_value=None) -> int:
     """
     Prompt the user to input an integer value within the specified range and return it.
 
@@ -18,18 +10,24 @@ def get_integer_input(msg_to_show: str, min_value=None, max_value=None) -> int:
     Returns:
         int: The integer value entered by the user.
     """
+    # Loop until a valid integer input within the specified range is provided
     while True:
-        user_input = input(msg_to_show)
-        logging.info(f"User input: {user_input}")
 
+        # Prompt the user for input
+        user_input = input(msg_to_show)
+        # Check if the input is a valid integer
         if user_input.isdigit():
+            # Convert the input to an integer
             integer_value = int(user_input)
+            # Check if the integer is within the specified range
             if (min_value is None or integer_value >= min_value) and (max_value is None or integer_value <= max_value):
-                logging.info("Valid input received.")
                 return integer_value
             else:
-                logging.warning("Input out of range.")
                 print(f"Input must be within the range [{min_value}-{max_value}].")
         else:
-            logging.warning("Invalid input received.")
             print("Invalid input. Please enter a valid integer.")
+
+
+
+
+
