@@ -1,0 +1,44 @@
+2024-03-11 10:49:01,339 - INFO - User input: 2
+2024-03-11 10:49:01,339 - INFO - Valid input received.
+2024-03-11 10:49:01,917 - INFO - User input: 3
+2024-03-11 10:49:01,917 - INFO - Valid input received.
+2024-03-11 10:49:03,520 - INFO - User input: 1
+2024-03-11 10:49:03,520 - INFO - Valid input received.
+2024-03-11 10:49:03,967 - INFO - User input: 2
+2024-03-11 10:49:03,968 - WARNING - Input out of range.
+2024-03-11 10:49:07,158 - INFO - User input: 0
+2024-03-11 10:49:07,158 - INFO - Valid input received.
+2024-03-11 10:49:08,970 - INFO - User input: 1
+2024-03-11 10:49:08,972 - INFO - Valid input received.
+2024-03-11 10:49:32,784 - INFO - User input: a
+2024-03-11 10:49:32,784 - WARNING - Invalid input received.
+2024-03-11 10:49:38,807 - INFO - User input: 2
+2024-03-11 10:49:38,807 - WARNING - Input out of range.
+2024-03-11 10:49:43,128 - INFO - User input: 0
+2024-03-11 10:49:43,128 - INFO - Valid input received.
+2024-03-11 10:53:09,510 - INFO - User input: 5
+2024-03-11 10:53:09,510 - INFO - Valid input received.
+2024-03-11 10:53:10,899 - INFO - User input: 4
+2024-03-11 10:53:10,900 - INFO - Valid input received.
+2024-03-11 10:53:10,900 - INFO - Populating living cells
+2024-03-11 10:53:18,035 - INFO - User input: 0
+2024-03-11 10:53:18,035 - INFO - Valid input received.
+2024-03-11 10:53:18,433 - INFO - User input: 0
+2024-03-11 10:53:18,434 - INFO - Valid input received.
+2024-03-11 10:53:18,434 - INFO - Cell at (0, 0) set as living cell
+2024-03-11 10:53:19,876 - INFO - User input: 1
+2024-03-11 10:53:19,877 - INFO - Valid input received.
+2024-03-11 10:53:23,196 - INFO - User input: 2
+2024-03-11 10:53:23,196 - INFO - Valid input received.
+2024-03-11 10:53:23,490 - INFO - User input: 2
+2024-03-11 10:53:23,490 - INFO - Valid input received.
+2024-03-11 10:53:23,490 - INFO - Cell at (2, 2) set as living cell
+2024-03-11 10:53:24,312 - INFO - User input: 2
+2024-03-11 10:53:24,312 - INFO - Valid input received.
+2024-03-11 10:53:24,312 - INFO - Population of living cells completed
+2024-03-11 10:53:24,314 - INFO - Cell at (0, 0) died due to underpopulation
+2024-03-11 10:53:24,314 - INFO - Cell at (2, 2) died due to underpopulation
+2024-03-11 10:53:24,314 - INFO - Board updated
+2024-03-11 10:53:24,315 - INFO - Board updated
+2024-03-11 10:53:24,317 - INFO - Board updated
+2024-03-11 10:53:24,318 - INFO - Board updated

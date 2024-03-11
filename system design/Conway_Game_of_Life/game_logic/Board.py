@@ -1,7 +1,9 @@
 import copy
+import logging
 
 from utils.input_user import get_integer_input
 
+logging.basicConfig(filename='input.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Board:
     def __init__(self, size):
@@ -44,14 +46,19 @@ class Board:
                         pass
                     else:
                         self.board[i][j] = ' '
+                        logging.info(f"Cell at ({i}, {j}) died due to underpopulation")
+
                 else:
                     if count_living_neighbor_i_j >=3:
                         self.board[i][j] = 'X'
+                        logging.info(f"Cell at ({i}, {j}) became alive")
+        logging.info("Board updated")
 
     def populate_living_cells(self):
         """
          Allows the user to input the coordinates of living cells on the board.
          """
+        logging.info("Populating living cells")
         print("Please input the coordinates of the living cells.")
         print("Press Enter when you're done.")
         while True:
@@ -60,9 +67,11 @@ class Board:
             col_board = get_integer_input(msg_to_show="Please enter the col number: ", min_value=0,
                                           max_value=self.size - 1)
             if self.board[row_board][col_board] == 'X':
+                logging.warning(f"Cell at ({row_board}, {col_board}) is already occupied by a living cell.")
                 print("Cell is already occupied by a living cell.")
             else:
                 self.board[row_board][col_board] = 'X'  # Set cell as living
+                logging.info(f"Cell at ({row_board}, {col_board}) set as living cell")
 
             continue_or_not = get_integer_input(
                 "You want to continue?\n1. Yes\n2. No\nPlease enter the number corresponding to your choice: ",
@@ -71,6 +80,7 @@ class Board:
                 break
             if continue_or_not == 1:
                 pass
+        logging.info("Population of living cells completed")
 
     def count_living_neighbors(self, row, col):
         """

@@ -18,7 +18,7 @@ To run the Conway's Game of Life simulator, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/conways-game-of-life.git
+   git clone https://github.com/muhammadser1/hasub-backend-bootcamp/tree/main/system%20design
 Navigate to the project directory:
 
 bash
@@ -32,7 +32,7 @@ Usage
 To start the simulator, run the following command:
 
 bash
-Copy code
+
 python main.py
 Follow the on-screen instructions to set the initial state of the board, specify the number of rounds to simulate, and observe the evolution of the game.
 
