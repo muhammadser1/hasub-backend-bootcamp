@@ -1,0 +1,22 @@
+{
+  "trucks": [
+    {
+      "brand": "Brand A",
+      "max_fuel_amount": 100,
+      "km_per_liter": 10,
+      "repair_price_per_km": 5
+    },
+    {
+      "brand": "Brand B",
+      "max_fuel_amount": 120,
+      "km_per_liter": 8,
+      "repair_price_per_km": 7
+    },
+    {
+      "brand": "Brand C",
+      "max_fuel_amount": 90,
+      "km_per_liter": 12,
+      "repair_price_per_km": 4
+    }
+  ]
+}
