@@ -1,0 +1,14 @@
+INFO:root:Data loaded from JSON file: data_files/roads.json
+INFO:root:Data loaded from JSON file: data_files/trucks.json
+INFO:root:Truck status: {'fuel_level': 120, 'mental_health': 100, 'total_expenses': 0}
+INFO:root:Truck status: {'fuel_level': 120, 'mental_health': 100, 'total_expenses': 0}
+INFO:root:Truck can travel 10 km
+INFO:root:Truck traveled 10 km along Highway road
+INFO:root:Truck status: {'fuel_level': 118.75, 'mental_health': 101, 'total_expenses': -20}
+INFO:root:Truck status: {'fuel_level': 118.75, 'mental_health': 101, 'total_expenses': -20}
+INFO:root:Truck can travel 5 km
+INFO:root:Truck traveled 5 km along Mountain road
+INFO:root:Truck status: {'fuel_level': 118.125, 'mental_health': 99, 'total_expenses': -45}
+INFO:root:Truck status: {'fuel_level': 118.125, 'mental_health': 99, 'total_expenses': -45}
+INFO:root:Truck can travel 3 km
+INFO:root:Truck traveled 3 km along City road

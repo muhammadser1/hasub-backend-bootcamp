@@ -1,0 +1,31 @@
+{
+  "roads": [
+    {
+      "road_type": {
+        "name": "Highway",
+        "fuel_consumption": -5,
+        "wheel_wear": -2,
+        "mental_health": 1
+      },
+      "length": 10
+    },
+    {
+      "road_type": {
+        "name": "Mountain",
+        "fuel_consumption": -8,
+        "wheel_wear": -5,
+        "mental_health": -2
+      },
+      "length": 5
+    },
+    {
+      "road_type": {
+        "name": "City",
+        "fuel_consumption": -10,
+        "wheel_wear": -3,
+        "mental_health": -5
+      },
+      "length": 3
+    }
+  ]
+}
