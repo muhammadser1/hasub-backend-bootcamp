@@ -1,0 +1,28 @@
+Gameplay
+Setup:
+
+Create a list of place names and weapon names.
+Specify the number of players for the game session.
+Starting a Game:
+
+Instantiate a Game object with the desired number of players.
+Each player is initialized with a name, a list of last visited places, and a list of favorite weapons.
+Round Mechanics:
+
+Each round begins with a new murder scenario generated randomly:
+A murderer is selected from the pool of players.
+A murder place and murder weapon are chosen.
+Players take turns performing actions:
+Visit 1-3 random places.
+Gather clues by suspecting other players:
+Show 2 randomly chosen visited places.
+Show 1 randomly chosen favorite weapon.
+Make an accusation:
+Accuse another player of being the murderer.
+If the accused player is the murderer, the game ends.
+If no correct accusations are made, the game continues to the next round.
+Ending the Game:
+
+The game ends when:
+The murderer is correctly accused.
+There are only the player and the murderer remaining (the murderer wins).

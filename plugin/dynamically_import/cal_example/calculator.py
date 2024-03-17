@@ -25,9 +25,9 @@ if __name__ == "__main__":
     operand1 = float(sys.argv[2])
     operand2 = float(sys.argv[3])
 
-    module=import_operation(operation_name)
+    module = import_operation(operation_name)
     operation_function_name = operation_name + "_"
 
-    operation_function = getattr(module,operation_function_name)
+    operation_function = getattr(module, operation_function_name)
     result = operation_function(operand1, operand2)
     print(result)
