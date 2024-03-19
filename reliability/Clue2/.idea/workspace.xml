@@ -2,35 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf77d35-dabf-4746-b54e-62ac2e1cfcf7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/reliability.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/Clue_Game2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/data/data_input/input.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/data/data_input/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/data/reader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Clue/utils/get_integer_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Clue2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Clue_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlowChart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/data_input/input.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/data_input/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/reader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/clear_log_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/get_integer_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/read_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugin/dynamically_import/cal_example/calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugin/dynamically_import/cal_example/calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data_input/input2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/merge_json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pytest_fcc/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pytest_fcc/src/my_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pytest_fcc/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pytest_fcc/tests/test_my_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
