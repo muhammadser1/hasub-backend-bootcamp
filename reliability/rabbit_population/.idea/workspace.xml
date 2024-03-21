@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff7c1c-d9cf-48cc-8885-ff4755fd4aea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../basic_tests_2/mmm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rabbit_population.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/records_num" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_processing_scripts/json_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_processing_scripts/txt_data_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log_info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbit_sensor/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/basic_tests.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/LotterySystem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/Raffle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/test/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/test/picking_winner_s/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/test/picking_winner_s/test_pick_winner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basic_tests/test/picking_winner_s/test_pick_winners_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

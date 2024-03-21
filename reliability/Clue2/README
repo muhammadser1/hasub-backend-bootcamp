@@ -1,28 +1,29 @@
-Gameplay
-Setup:
+In the `main()` function located in `main.py`:
+I read data from a JSON file, including information about weapons and places. If the initial attempt to read the data fails,
+ I prompt the user to try again up to 5 times. This could occur due to errors in the file or if it doesn't exist in the specified path.
 
-Create a list of place names and weapon names.
-Specify the number of players for the game session.
-Starting a Game:
+Additionally, I obtain the number of players using a function called `get_integer_input` located in the `utils` module.
+ This function performs input validation, ensuring that the user enters a valid integer value.
 
-Instantiate a Game object with the desired number of players.
-Each player is initialized with a name, a list of last visited places, and a list of favorite weapons.
-Round Mechanics:
+Once I have the necessary data and the number of players, I initialize the game by creating an instance of the `Game` class with the obtained information:
+ `Game(places, weapons, player_num, game_ui)`. Finally, I start the game.
 
-Each round begins with a new murder scenario generated randomly:
-A murderer is selected from the pool of players.
-A murder place and murder weapon are chosen.
-Players take turns performing actions:
-Visit 1-3 random places.
-Gather clues by suspecting other players:
-Show 2 randomly chosen visited places.
-Show 1 randomly chosen favorite weapon.
-Make an accusation:
-Accuse another player of being the murderer.
-If the accused player is the murderer, the game ends.
-If no correct accusations are made, the game continues to the next round.
-Ending the Game:
+###########################################################################################################################
+In the start() function of the Clue_game class, I first create a player instance within the function. For each player,
+ I call a function that randomly adds places using the add_visit_places(places) method. This method takes a list of places, randomly selects 1-3 places, and adds them to the player's visited list.
 
-The game ends when:
-The murderer is correctly accused.
-There are only the player and the murderer remaining (the murderer wins).
+I've created a test case called test_player_add_visit_places to ensure the functionality of this method:
+
+It checks if the input and the output are correct.
+It handles the case when the input list of places is empty ([]).
+It handles the case when the input list of places is None.
+It handles the case when the input list contains only one place (["places1"]).
+It verifies that the method correctly raises a TypeError when the input is of an incorrect type, such as an integer or a dictionary ({}), instead of a list ([]).
+
+The tests I've created for adding favorite weapons to the player mirror those I've implemented for adding visited places.
+###########################################################################################################################
+After creating the players and designating one as the murderer, the generate_murder() function is called.
+This function generates details of the murder for the current round by randomly selecting a murder place and a non-assassin player as the victim.
+I have only written one test, but more are needed to verify if the output of the function, murder_place, is among the visited places of the murderer.
+
+###########################################################################################################################

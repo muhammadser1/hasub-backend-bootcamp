@@ -28,8 +28,12 @@ class Game():
         """Create player instances and assign them random places and favorite weapons."""
         self.players = [Player(f"Player {i + 1}") for i in range(self.num_players)]
         for player in self.players:
-            player.add_favorite_weapon(self.weapons)
-            player.add_visit_places(self.places)
+            try:
+                player.add_favorite_weapon(self.weapons)
+                player.add_visit_places(self.places)
+            except TypeError as e:
+                print("Error:", e)
+
         self.murder = random.choice(self.players)
         self.murder.status = "assassin"
 
@@ -46,6 +50,7 @@ class Game():
         self.players.remove(died_player)
         logging.info(
             f"Murder details - Place: {murder_place}, Weapon: {murder_weapon}, Died Player: {died_player.name}")
+        return murder_place
 
     def non_assassin_players(self):
         """
