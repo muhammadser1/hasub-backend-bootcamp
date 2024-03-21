@@ -1,0 +1,7 @@
+2024-03-21 01:46:40,034  - {'timestamp': '2024-03-21 01:46:20', 'rabbit_deaths': 5, 'rabbit_births': 1} is deleted, total rabbit count is: 3
+2024-03-21 01:46:40,035  - {'timestamp': '2024-03-21 01:46:21', 'rabbit_deaths': 7, 'rabbit_births': 4} is deleted, total rabbit count is: 3
+2024-03-21 01:46:40,035  - {'timestamp': '2024-03-21 01:46:24', 'rabbit_deaths': 6, 'rabbit_births': 1} is deleted, total rabbit count is: 3
+2024-03-21 01:46:40,035  - {'timestamp': '2024-03-21 01:46:29', 'rabbit_deaths': 4, 'rabbit_births': 2} is deleted, total rabbit count is: 3
+2024-03-21 01:47:03,059  - {'timestamp': '2024-03-21 01:46:53', 'rabbit_deaths': 10, 'rabbit_births': 4} is deleted, total rabbit count is: 5
+2024-03-21 01:47:03,059  - {'timestamp': '2024-03-21 01:46:54', 'rabbit_deaths': 6, 'rabbit_births': 2} is deleted, total rabbit count is: 5
+2024-03-21 01:47:03,060  - {'timestamp': '2024-03-21 01:47:00', 'rabbit_deaths': 8, 'rabbit_births': 2} is deleted, total rabbit count is: 7

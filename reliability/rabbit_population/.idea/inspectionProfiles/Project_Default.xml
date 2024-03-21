@@ -16,6 +16,7 @@
           <option value="int.isdigit" />
           <option value="random.random.randint" />
           <option value="operations.data_crud" />
+          <option value="utils.json_fns" />
         </list>
       </option>
     </inspection_tool>
