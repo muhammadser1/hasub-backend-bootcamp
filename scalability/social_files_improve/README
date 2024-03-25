@@ -1,0 +1,108 @@
+# Social Media Platform
+
+## Overview
+The platform should allow users to post messages, follow other users, and view a timeline of posts from users they
+follow.
+
+## Features:
+a. User Registration: Allow users to register with a unique username.
+b. Posting Messages: Allow registered users to post messages.
+c. Following Users: Allow users to follow other users.
+d. Timeline: Provide each user with a timeline of posts from users they follow.
+
+## Flow_Chart:
+![Image Alt Text](media_flow_chart.png)
+
+## Main_Functions:
+1. def register_user(self, username):
+2. def generate_timeline(self, username):
+3. def follow(self, other_user):
+4. def post_message(self, message):
+
+
+improvements:
+#######################################################################################################################
+class User:
+    def __init__(self, username):
+        self.username = username
+        self.following = []
+
+now:
+class User_improved:
+    def __init__(self, username):
+        self.username = username
+        self.following = set()
+        self.posts = []
+
+Because searching for whether I follow a specific username in the social_media_operations module would have a time
+ complexity of O(n) in a list, I opted to use a set to minimize the time complexity to O(1) amortized. Additionally,
+ I augmented each user with a list of posts. Why did I do this? Well, in the generate_timeline function, I need to
+ retrieve all the posts made by all my followers. By having each user maintain their own list of posts,
+ I eliminate the need for a global post list and avoid the expensive operation of searching through it.
+
+#######################################################################################################################
+ before:
+     def register_user(self, username):
+        if not self._is_username_taken(username):
+            user = User(username)
+            self.users.append(user)
+ now:
+    def register_user(self, username):
+        if username not in self.users:
+            self.users[username]=User_improved(username)
+        else:
+            pass
+I don't need to use _is_username_taken(username). It's simpler to check if the username exists in the users dictionary
+directly. Since users is a dictionary where the keys are usernames, replacing the O(n) complexity of _is_username_taken
+ with direct dictionary lookup reduces the complexity to O(1).
+
+#######################################################################################################################
+ before:
+     def _is_username_taken(self, username):
+        for user in self.users:
+            if user.username == username:
+                return True
+        return False
+ now:
+     def _is_username_taken(self, username):
+        return self.users.get(username)
+
+There's no need to iterate through the users. I've changed the users to be a dictionary where the keys are usernames.
+To check if a username is taken or not, I can simply use users.get(username). This replaces the O(n) complexity with
+O(1) amortized time complexity.
+#######################################################################################################################
+before:
+    def generate_timeline(self, username):
+        user = self.get_user_by_username(username)
+        if not user:
+            return []
+
+        timeline = []
+        for followed_user in user.following:
+            for post in posts:
+                if post['username'] == followed_user:
+                    timeline.append(post)
+        return timeline
+
+after:
+    def generate_timeline(self, username):
+        user = self.users.get(username)
+        if not user:
+            return []
+
+        timeline = []
+        for followed_username in user.following:
+            followed_user = self.users.get(followed_username)
+            if followed_user:
+                timeline.extend(followed_user.posts)
+
+        return timeline
+
+Here, I don't need to iterate over all the posts in the media. Now, I just need the posts of my followers.
+So what I've done is iterate over my followers and extend their posts. I've added self.posts=[] to each user.
+
+Previously, the time complexity was O(|N|*|M|), where N is the number of users I'm following and M is the total
+number of posts in the media.
+
+Now, the time complexity is O(|N|*|K|), where N is the number of users I'm following and K is the number of posts
+ of my followers. Notably, K is much smaller than M, significantly reducing the computational load.
