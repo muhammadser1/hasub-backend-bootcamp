@@ -11,7 +11,7 @@ c. Following Users: Allow users to follow other users.
 d. Timeline: Provide each user with a timeline of posts from users they follow.
 
 ## Flow_Chart:
-![Image Alt Text](media_flow_chart.png)
+!(https://github.com/muhammadser1/hasub-backend-bootcamp/blob/main/scalability/social_files_improve/media_flow_chart.png)
 
 ## Main_Functions:
 1. def register_user(self, username):
