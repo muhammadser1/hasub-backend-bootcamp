@@ -10,4 +10,3 @@
 ['multi_processing (4 processing)  ', '13.744307699998899']
 ['multi_processing (5 processing)  ', '14.291226699999243']
 
-['multi_processing (1 processing)  ', '0.4387242000011611']
