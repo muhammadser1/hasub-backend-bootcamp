@@ -66,5 +66,5 @@ def process_records():
         number = read_records_num(records_num_path)
     print("backend end")
 
-
+print("backend started")
 process_records()

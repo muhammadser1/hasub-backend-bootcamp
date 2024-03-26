@@ -43,5 +43,6 @@ def generate_and_save_records():
         records_num = read_records_num(records_num_path)
     print("sensor end")
 
+print("sensor started")
 
 generate_and_save_records()

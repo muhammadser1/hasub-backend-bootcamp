@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feff7c1c-d9cf-48cc-8885-ff4755fd4aea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Clue2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Clue2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/records_num" beforeDir="false" afterPath="$PROJECT_DIR$/data/records_num" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log_info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbit_sensor/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbit_sensor/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

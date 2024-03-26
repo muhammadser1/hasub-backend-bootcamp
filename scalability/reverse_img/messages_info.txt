@@ -1,0 +1,13 @@
+['single_thread avg of 5 iteration ', '43.88999623999844']
+['multi_threads (2 threads) avg of 5 iteration ', '32.82650275999913']
+['multi_threads (3 threads) avg of 5 iteration ', '33.14418457999709']
+['multi_threads (4 threads) avg of 5 iteration ', '29.60054691999976']
+['multi_threads (5 threads) avg of 5 iteration ', '36.157608959999926']
+['multi_threads (6 threads) avg of 5 iteration ', '50.69168829999835']
+['multi_threads (10 threads) avg of 5 iteration ', '57.05731418000214']
+['multi_processing (2 processing)  ', '12.400322100002086']
+['multi_processing (3 processing)  ', '12.58538640000188']
+['multi_processing (4 processing)  ', '13.744307699998899']
+['multi_processing (5 processing)  ', '14.291226699999243']
+
+['multi_processing (1 processing)  ', '0.4387242000011611']
