@@ -1,0 +1,13 @@
+Average registration time before improvements over 3 iterations for inputs [10, 1000, 10000, 20000, 50000] is:: 81.17202436666896
+Average registration time after improvements over 3 iterations for inputs [10, 1000, 10000, 20000, 50000] is:: 0.061131866658494495
+
+Average post_calculater time before improvements:: 0.06388886666779096
+Average post_calculater time after improvements:: 0.053234366670949385
+
+Average follow_username time before improvements over 3 iterations for inputs [10, 1000, 10000, 20000, 50000] is:: 23.394471600001754
+Average follow_username time after improvements over 3 iterations for inputs [10, 1000, 10000, 20000, 50000] is:: 0.02984709999873303
+
+Average generate_timeline time before improvements with inputs [10, 1000, 5000] is:: 76.75374509999529
+Average generate_timeline time after improvements with inputs [10, 1000, 5000] is:: 0.0013633999915327877
+
+
