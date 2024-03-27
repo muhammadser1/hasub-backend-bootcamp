@@ -20,9 +20,9 @@ for _ in range(5):
     reversed_img = img.copy()
     reversed_pixels = reversed_img.load()
     single_thread(height, width)
-    reversed_img.show()
+    # reversed_img.show()
     end = time.perf_counter()
     total = end - start
     sum_total+=total
 print('total: ', sum_total)
-write_messages_to_file(["single_thread avg of 5 iteration ", str(sum_total/5)])
+write_messages_to_file(["single_thread avg of 5 iteration using PIL Image ", str(sum_total/5)])

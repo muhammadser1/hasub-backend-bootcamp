@@ -1,0 +1,40 @@
+['single_thread avg of 5 iteration using PIL Image ', '22.92415817999863']
+['single_thread avg of 5 iteration using cv2  ', '187.609147259997552']
+
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+['multi_threads (5 threads) avg of 5 iteration using PIL Image', '17.18605503999861']
+['multi_threads (3 threads) avg of 5 iteration using PIL Image', '17.524937400000635']
+['multi_threads (8 threads) avg of 5 iteration using PIL Image', '20.026241620001382']
+['multi_threads (3 threads) avg of 5 iteration using OpenCV', '165.75832629999786']
+['multi_threads (5 threads) avg of 5 iteration using OpenCV', '163.63792324000096']
+['multi_threads (10 threads) avg of 5 iteration using OpenCV', '151.90386744000426']
+
+['multi_processing (5 processors) avg of 5 iteration using cv2 Image ', '41.176434759999395']
+['multi_processing (10 processors) avg of 5 iteration using cv2 Image ', '37.362909959998795']
+['multi_processing (20 processors) avg of 5 iteration using cv2 Image ', '32.55758212000073']
+['multi_processing (30 processors) avg of 5 iteration using cv2 Image ', '40.49223510000447']
+
+['multi_processing (5 processors) avg of 5 iteration using PIL Image ', '43.10999082000344']
+['multi_processing (10 processors) avg of 5 iteration using PIL Image ', '38.83474685999681']
+['multi_processing (20 processors) avg of 5 iteration using PIL Image ', '36.32206380000571']
+['multi_processing (30 processors) avg of 5 iteration using PIL Image ', '40.253386279998814']
+
+
+
+Analysis:
+Single-threaded processing with PIL Image takes the least time compared to OpenCV.
+Multi-threaded processing with PIL Image shows a slight improvement over the single-threaded version but doesn't scale
+much with the increase in threads.
+Multi-threaded processing with OpenCV shows significant improvement over the single-threaded OpenCV version, indicating
+ better threading support.
+Multi-processing shows improvements over multi-threading, especially with a higher number of processors, for both PIL
+Image and OpenCV versions. This indicates that parallel processing with multiple processes is more effective in
+ utilizing system resources compared to threads.
+Overall, the choice between PIL Image and OpenCV depends on factors like ease of use, functionality, and specific
+ requirements of the application. When it comes to parallel processing, multi-processing generally outperforms
+ multi-threading, especially with a higher number of processors.
+=======
+>>>>>>> 01280b1e0facdab005ebc9116c319efa62f260b5
+>>>>>>> Stashed changes
