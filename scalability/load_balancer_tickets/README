@@ -40,7 +40,7 @@ If I want to implement strong consistency, I will add locks before each reading 
 In our example, this means adding locks before selling tickets and updating the database for each server.
 
 
-
+![](https://github.com/muhammadser1/hasub-backend-bootcamp/blob/main/scalability/load_balancer_tickets/flow.png)
 
 
 
