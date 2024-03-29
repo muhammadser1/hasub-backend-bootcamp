@@ -1,9 +1,5 @@
 import json
-import logging
 import time
-
-logging.basicConfig(filename='server.log', level=logging.INFO, format='%(asctime)s  - %(message)s')
-
 
 class Server:
     def __init__(self, tickets_file, max_requests_per_time=5, requests_threshold_delay=2, max_concurrent_requests=3):
@@ -15,18 +11,16 @@ class Server:
         self.requests_threshold_delay = requests_threshold_delay
         self.max_concurrent_requests = max_concurrent_requests
         self.current_concurrent_requests = 0
-
-    def sell_ticket(self, event):  # event=Concert for example
-
+        self.count=0
+    def sell_ticket(self, event):
         if event not in self.tickets_db or self.tickets_db[event] <= 0:
             print(f"No tickets available for {event}.")
             return False
-        if self.current_concurrent_requests >= self.max_concurrent_requests: ## threads
+        if self.current_concurrent_requests >= self.max_concurrent_requests:
             raise Exception("Server overloaded. Please try again later.")
         self.current_concurrent_requests += 1
-        print("self.current_concurrent_requests",self.current_concurrent_requests)
         self.tickets_db[event] -= 1
-        logging.info(f"Sold 1 ticket for {event}. Remaining: {self.tickets_db[event]}")
+        print(f"Sold 1 ticket for {event}. Remaining: {self.tickets_db[event]}")
         self.current_concurrent_requests -= 1
         return True
 
@@ -52,6 +46,6 @@ class Server:
         time.sleep(0.5)
         self.current_concurrent_requests -= 1
 
-# # Example usage:
+# Example usage:
 # if __name__ == "__main__":
 #     server = Server("tickets.json", max_requests_per_time=10, requests_threshold_delay=3, max_concurrent_requests=5)

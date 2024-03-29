@@ -1,0 +1,46 @@
+Load Balance:
+I chose to implement the 'least connection' strategy, which considers the total number of tickets sold by each server.
+ As we can observe in the log file, requests are directed to the server with the lowest total ticket sales.
+
+Upsides:
+
+Load Distribution: The "least connection" strategy distributes incoming requests evenly across servers based on their
+current workload, ensuring that no single server becomes overwhelmed with requests.
+
+Scalability: As the workload increases, new servers can be added to the system, and requests will automatically
+be distributed to these additional servers, maintaining optimal performance.
+
+Efficient Resource Utilization: By directing requests to servers with the fewest active connections (or in this case,
+sold tickets), resources are utilized more efficiently, leading to improved system performance.
+
+
+Complexity: Managing the distribution of requests based on the total number of tickets sold adds complexity to
+the load balancer implementation, potentially increasing development and maintenance efforts.
+
+
+#######################################################################################################################
+
+Consistent Strategy:
+
+Strong Consistency Strategy:
+
+Upsides:
+
+Data Integrity: With strong consistency, all read operations return the most recent write operation,
+ensuring that users always see the most up-to-date information about ticket availability and purchases.
+
+User Confidence: Users can trust that their interactions with the ticket-selling platform will result in accurate
+ and consistent outcomes, reducing the risk of errors or misunderstandings.
+
+Downsides:
+Single Point of Failure(because of using locks)
+more time...
+
+If I want to implement strong consistency, I will add locks before each reading from and writing to the database.
+In our example, this means adding locks before selling tickets and updating the database for each server.
+
+
+
+
+
+

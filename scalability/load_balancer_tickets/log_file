@@ -1,0 +1,140 @@
+2024-03-29 23:43:42,097  - Load Balancer Report:
+Total Requests Received: 0
+Request Distribution:
+- Server 1: 0
+- Server 2: 0
+- Server 3: 0
+
+2024-03-29 23:43:47,107  - Load Balancer Report:
+Total Requests Received: 13
+Request Distribution:
+- Server 1: 13
+- Server 2: 0
+- Server 3: 0
+
+2024-03-29 23:43:52,108  - Load Balancer Report:
+Total Requests Received: 13
+Request Distribution:
+- Server 1: 13
+- Server 2: 0
+- Server 3: 0
+
+2024-03-29 23:43:57,109  - Load Balancer Report:
+Total Requests Received: 32
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 0
+
+2024-03-29 23:44:02,123  - Load Balancer Report:
+Total Requests Received: 32
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 0
+
+2024-03-29 23:44:07,139  - Load Balancer Report:
+Total Requests Received: 32
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 0
+
+2024-03-29 23:44:12,152  - Load Balancer Report:
+Total Requests Received: 32
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 0
+
+2024-03-29 23:44:17,154  - Load Balancer Report:
+Total Requests Received: 45
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 13
+
+2024-03-29 23:44:22,160  - Load Balancer Report:
+Total Requests Received: 45
+Request Distribution:
+- Server 1: 13
+- Server 2: 19
+- Server 3: 13
+
+2024-03-29 23:44:27,175  - Load Balancer Report:
+Total Requests Received: 53
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 13
+
+2024-03-29 23:44:32,184  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:44:37,190  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:44:42,191  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:44:47,207  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:44:52,211  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:44:57,213  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:45:02,226  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:45:07,235  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:45:12,239  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
+2024-03-29 23:45:17,249  - Load Balancer Report:
+Total Requests Received: 73
+Request Distribution:
+- Server 1: 21
+- Server 2: 19
+- Server 3: 33
+
