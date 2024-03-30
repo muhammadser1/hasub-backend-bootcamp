@@ -3,10 +3,13 @@ import threading
 import time
 import logging
 
+### good usage of loggin. important for maintainability and relaibility
+### but if you want to add loggin - use it! on every function, on every major operations
 logging.basicConfig(filename="log_file", level=logging.INFO, format='%(asctime)s  - %(message)s')
 
 
 def find_server_index(servers, server_):
+    ### is there a faster way to do this?
     for index, server in enumerate(servers):
         if server == server_:
             return index
@@ -15,6 +18,7 @@ def find_server_index(servers, server_):
 
 class LoadBalancer:
     def __init__(self, event_generator, servers):
+        ### logicaly, the load balancer dosent needs the event generator, they just need to cummunicate. we will learn how
         self.event_generator = event_generator
         self.servers = servers
         self.current_server_index = 0
@@ -51,5 +55,6 @@ class LoadBalancer:
         while True:
             report = self.generate_report()
             logging.info(report)
+            ### remove before submitting
             # print("aaaaaaaaaaaaaaaaaaaaaaaaa")
             time.sleep(5)
