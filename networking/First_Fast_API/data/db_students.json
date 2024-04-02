@@ -24,41 +24,5 @@
             "Math",
             "English"
         ]
-    },
-    "3457": {
-        "id": 3457,
-        "name": "Muhammad",
-        "age": 20,
-        "classes": [
-            "Math",
-            "English",
-            "Sport"
-        ]
-    },
-    "1": {
-        "id": 1,
-        "name": "Sarah",
-        "age": 21,
-        "classes": [
-            "Math",
-            "English",
-            "Sport"
-        ]
-    },
-    "2": {
-        "id": 2,
-        "name": "David",
-        "age": 23,
-        "classes": [
-            "Math"
-        ]
-    },
-    "13": {
-        "id": 13,
-        "name": "Emma",
-        "age": 24,
-        "classes": [
-            "Sport"
-        ]
     }
 }
