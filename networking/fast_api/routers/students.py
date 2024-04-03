@@ -1,37 +1,39 @@
 from fastapi import APIRouter, Path
 from models.student import Student
 from utils.db_fns import *
-from utils.get_correct_file_path import get_students_data_file_path
+from utils.get_json_file_path import get_json_file_path
 from utils.student_utils.check_id_exists import check_student_id_exists
 from utils.student_utils.update_student import update_student
 
 router = APIRouter()
 
 
-@router.get("/")
+@router.get("/students",tags=["tests"])
 async def test():
     # Test end point to verify server functionality.
     print("hi from test end point")
     return "hi from test end point :)"
 
-#$ curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
-@router.post("/students/add_student")
+
+# $ curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
+@router.post("/students/add_student",tags=["students"])
 async def add_student(student: Student):
     """
     Add a new student to the database.
     :param student (Student) :   The student object representing the new student to be added.
     :return: A message confirming the successful addition of the student, with the student_id
     """
-    file_path=get_students_data_file_path('db_students.json')
-    if check_student_id_exists(file_path,str(student.id)):
+    file_path = get_json_file_path('db_students.json')
+    if check_student_id_exists(file_path, str(student.id)):
         return "Student with this ID already exists"
     updated_db = update_student(file_path, student)
     write_json(updated_db, file_path)
     return {"message": "Student added successfully", "student_id": student.id}
 
-#$ curl -X GET http://localhost:8000/get_student/3
 
-@router.get("/students/get_student/{student_id}")
+# $ curl -X GET http://localhost:8000/get_student/3
+
+@router.get("/students/get_student/{student_id}",tags=["students"])
 async def get_student(student_id: int = Path(..., desciption="Enter the id of the student")):
     """
      Retrieve information about a specific student by their ID.
@@ -42,7 +44,7 @@ async def get_student(student_id: int = Path(..., desciption="Enter the id of th
     If the student is not found, it returns an appropriate error message.
  """
     try:
-        file_path = get_students_data_file_path('db_students.json')
+        file_path = get_json_file_path('db_students.json')
         db_students = load_json(file_path)
         return db_students[str(student_id)]
     except FileNotFoundError:
@@ -52,9 +54,10 @@ async def get_student(student_id: int = Path(..., desciption="Enter the id of th
     except Exception as e:
         return {"error": f"An error occurred: {e}"}
 
-#$ curl -X GET http://localhost:8000/get_students_in_class/Math
 
-@router.get("/students/get_students_in_class/{class_name}")
+# $ curl -X GET http://localhost:8000/get_students_in_class/Math
+
+@router.get("/students/get_students_in_class/{class_name}",tags=["students"])
 async def get_students_in_class(class_name: str = Path(..., description="Enter the class")):
     """
         Retrieve all students belonging to a specific class.
@@ -66,7 +69,7 @@ async def get_students_in_class(class_name: str = Path(..., description="Enter t
         name. It then adds the matching students to a list and returns it.
     """
     try:
-        file_path = get_students_data_file_path('db_students.json')
+        file_path = get_json_file_path('db_students.json')
         db_students = load_json(file_path)
         students_in_class = [student for student in db_students.values() if class_name in student.get("classes", [])]
         return students_in_class
@@ -76,9 +79,8 @@ async def get_students_in_class(class_name: str = Path(..., description="Enter t
         return {"error": f"An error occurred: {e}"}
 
 
-
-#$ curl -X GET http://localhost:8000/students/get_all_students
-@router.get("/students/get_all_students")
+# $ curl -X GET http://localhost:8000/students/get_all_students
+@router.get("/students/get_all_students",tags=["students"])
 async def get_all_students():
     """
     The function returns all the students in the database.
@@ -87,7 +89,7 @@ async def get_all_students():
      it returns an appropriate error message.
     """
     try:
-        file_path = get_students_data_file_path('db_students.json')
+        file_path = get_json_file_path('db_students.json')
         db_students = load_json(file_path)
         return db_students
     except FileNotFoundError:

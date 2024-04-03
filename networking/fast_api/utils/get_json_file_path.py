@@ -1,7 +1,7 @@
 import os
 
 
-def get_students_data_file_path(file_name:str):
+def get_json_file_path(file_name:str):
     """
     Get the file path for the students data JSON file.
     """
