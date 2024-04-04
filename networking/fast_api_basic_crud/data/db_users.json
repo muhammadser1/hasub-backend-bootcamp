@@ -1,37 +1,12 @@
 {
     "1": {
         "username": "1",
-        "password": "$2b$12$on0tPIzidVeYzSSz1r0eBeeyr1wz4GvTJG3afOffyYrZHoN5/R0ey",
+        "password": "$2b$12$tc2bDnKBojvTTgGZQKO2reXx4UgNOAn53AewZbZkYOk3wOFag21wu",
         "role": "admin"
-    },
-    "2": {
-        "username": "2",
-        "password": "$2b$12$vyWksyFFzmmi2VJwIdqa/eSRS6kO0nH1IyEuSp6NvddZzu8CspCxq",
-        "role": "admin"
-    },
-    "22": {
-        "username": "22",
-        "password": "$2b$12$6WUE4FMel22t.KCzgCMCPu4ETPKTCRFAjebHzIvs/AM/47ThkQw2W",
-        "role": "guest"
     },
     "11": {
         "username": "11",
-        "password": "$2b$12$MU4UnT5y/jLWAGy7qgAf8ei602/sWg9TkxHBv..lbRm68wMMbOOiW",
-        "role": "guest"
-    },
-    "3": {
-        "username": "3",
-        "password": "$2b$12$fbDTko1c3hqgvkdGC5SEVeiPa6y.MWIVqEBkFpkhxqUk33RMEcaz.",
-        "role": "admin"
-    },
-    "33": {
-        "username": "33",
-        "password": "$2b$12$frK0NIX/OvEooy3EKIMBAueTW/MpUM73x4T9lxwNrinYQ03ROO5yq",
-        "role": "guest"
-    },
-    "44": {
-        "username": "44",
-        "password": "$2b$12$O4Fto/cEIccB6HDEC8KB3ONzjarQGaQu4Ksh/8QDe3YKcU5pm01TO",
+        "password": "$2b$12$O90T9pPd2sWrmC4pJFX3CuhU78CiiW1ci1jN6UYCY8HUkG4ysOnDO",
         "role": "guest"
     }
 }

@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Path, Request
 from models.student import Student
+from utils.auth_utils.jwt_manager import check_token
 from utils.file_operations import write_json, load_json
+from utils.students_utils.parse_student_from_request import parse_student_from_request
 from utils.students_utils.retrieve_student_by_username import retrieve_student_by_username
 from utils.students_utils.student_exists_in_db import student_exists_in_db
 from utils.students_utils.update_student import update_student
@@ -16,27 +18,18 @@ async def test():
 
 
 @router.post("/students/add_student", tags=["students"])
-async def add_student(student: Student):
-    """
-   #     Add a new student to the database.
-   #
-   #     Parameters:
-   #         student (Student): The student object containing information about the student to be added.
-   #
-   #     Returns:
-   #         dict or str: A dictionary with a success message and the student ID if the student is added successfully.
-   #                      If a student with the same ID already exists, returns a string indicating the conflict.
-   #     """
+async def add_student(request: Request, username: str):
     db_student_path = "data/db_students.json"
-    if student_exists_in_db(db_path=db_student_path,student_id= student.id):
-        print("message:Student with this ID already exists")
-        return {"message": "Student with this ID already exists"}
-
-    updated_db = update_student(file_path=db_student_path,student= student)
-    write_json(updated_db, db_student_path)
-    print("message: Student added successfully, student_id:", student.id)
-    return {"message": "Student added successfully", "student_id": student.id}
-
+    token_path = "data/db_user_tokens.json"
+    student = await parse_student_from_request(request)
+    if check_token(request, username, token_path) == "admin":
+        if student_exists_in_db(db_path=db_student_path, student_id=student.id):
+            return {"message": "Student with this ID already exists"}
+        updated_db = update_student(file_path=db_student_path, student=student)
+        write_json(updated_db, db_student_path)
+        return {"message": "Student added successfully", "student_id": student.id}
+    if check_token(request, username, token_path) == "guest":
+        return {"message":"you are not an admin"}
 
 @router.get("/students/get_student/{student_id}", tags=["students"])
 async def get_student(student_id: int = Path(..., desciption="Enter the id of the student")):
@@ -51,7 +44,7 @@ async def get_student(student_id: int = Path(..., desciption="Enter the id of th
  """
     try:
         db_student_path = "data/db_students.json"
-        return retrieve_student_by_username(db_path=db_student_path,username=student_id)
+        return retrieve_student_by_username(db_path=db_student_path, username=student_id)
     except FileNotFoundError:
         return {"error": "Database file not found"}
     except KeyError:

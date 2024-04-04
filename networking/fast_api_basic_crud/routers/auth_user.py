@@ -1,5 +1,7 @@
 from fastapi import APIRouter, Depends
 from models.user import User
+from utils.auth_utils import jwt_manager
+from utils.auth_utils.jwt_manager import update_tokens
 from utils.auth_utils.password_utils import verify_password
 from utils.auth_utils.user_operations import *
 from utils.file_operations import *
@@ -24,7 +26,10 @@ def sign_up(user: User):
 
     try:
         add_user_to_auth_db(db_user_path, user)
-        return {"msg": f"User created with ID: {user.username}"}
+        auth_token = jwt_manager.generate_jwt({"username": user.username, "user role": user.role})
+        token_db_path ="data/db_user_tokens.json"
+        update_tokens(token_db_path, user.username, auth_token)
+        return {"msg": "ser created", "token": auth_token}
     except Exception as e:
         return {"error": f"An error occurred while creating the user: {e}"}
 
@@ -44,4 +49,9 @@ def sign_in(user: User):
             if not verify_password(stored_password, user.password):
                 return {"error: Invalid credentials"}
             else:
-                return {"message": "Sign-in successful"}
+                auth_token = jwt_manager.generate_jwt({"username": user.username, "user role": user.role})
+                token_db_path = "data/db_user_tokens.json"
+                update_tokens(token_db_path, user.username, auth_token)
+                return {"msg": "ser created", "token": auth_token}
+
+#curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEiLCJ1c2VyIHJvbGUiOiJhZG1pbiIsImV4cCI6MTcxMjI3MjcyOX0.9fHRFC1gnXX-vDpZaI_4F7jBfmBQJ1-m5t4-Tvgleao" -H "Content-Type: application/json" -d '{"id": 221523, "name": "John Doe", "age": 20, "classes": ["Math", "Science"]}' http://localhost:8000/students/add_student?username=1

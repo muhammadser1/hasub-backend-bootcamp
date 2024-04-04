@@ -54,3 +54,4 @@ def sign_in(user: User):
         return {"msg": "user sign in successfully", "token": auth_token}
     else:
         return {"msg": "invalid creds"}
+
