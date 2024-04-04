@@ -15,12 +15,11 @@ async def test():
     return "hi from test end point :)"
 
 
-# curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
+# $ curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
 @router.post("/students/add_student",tags=["students"])
 async def add_student(student: Student):
     """
     Add a new student to the database.
-    :param student:
     :param student (Student) :   The student object representing the new student to be added.
     :return: A message confirming the successful addition of the student, with the student_id
     """

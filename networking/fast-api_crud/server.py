@@ -1,12 +1,12 @@
 from fastapi import FastAPI, Request
 
-from routers import students
-from routers import auth_user
+from routers import student
+# from routers import auth_user
 
 app = FastAPI()
 
 # # # routes
-app.include_router(students.router)
+app.include_router(student.router)
 # app.include_router(auth_user.router)
 
 @app.middleware("http")

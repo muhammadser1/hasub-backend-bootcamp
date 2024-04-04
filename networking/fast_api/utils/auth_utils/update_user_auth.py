@@ -16,6 +16,7 @@ def update_user_auth(file_path: str, user:User):
     db_users= load_json(file_path)
     db_users[user.username] = {
         "username": user.username,
-        "password":hashed_password
+        "password":hashed_password,
+        "role":user.role
     }
     return db_users

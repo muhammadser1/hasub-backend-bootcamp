@@ -1,10 +1,22 @@
 {
-    "mom1o": {
-        "username": "mom1o",
-        "password": "$2b$12$pVUPkGCiLsuKJQh0KUDGHe9l.S5jf8Q2ndqVE5Su/yTwumN0o9EOS"
-    },
     "1": {
         "username": "1",
-        "password": "$2b$12$CINKpchQUBYvLgaUJOOlhOx9X3yS7Emici64befLENUrOixY0DEXy"
+        "password": "$2b$12$M9q2.nWTWyxOzGWc8Tn5LuNp925VoXn9qno/w2doDKaYKQ1757HR2",
+        "role": "Admin"
+    },
+    "2": {
+        "username": "2",
+        "password": "$2b$12$q.WUBtsk2eoMQnvoQ2vqEeuFOyek8vwYuVHWUyIgKmNrk7nJ/DJhi",
+        "role": "Admin"
+    },
+    "3": {
+        "username": "3",
+        "password": "$2b$12$pgjZyShDAbMV0q1TEVxkwuWSbqB5ghMTAa9SI4OYR6QqwM50H6f4G",
+        "role": "Guest"
+    },
+    "4": {
+        "username": "4",
+        "password": "$2b$12$qMJlOe3ur.8aLxNlEZknieQnycM1ig87mGG6Ryz1per4Gl6fjIj7C",
+        "role": "Guest"
     }
 }

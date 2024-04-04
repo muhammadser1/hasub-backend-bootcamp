@@ -1,43 +1,49 @@
 from fastapi import APIRouter, Path
+
 from models.student import Student
-from utils.db_fns import *
-from utils.get_json_file_path import get_json_file_path
-from utils.student_utils.check_id_exists import check_student_id_exists
+from utils.json_file_utils import *
+from utils.student_utils.get_student_by_username import get_student_by_username
 from utils.student_utils.update_student import update_student
 
 router = APIRouter()
 
 
-@router.get("/students",tags=["tests"])
+@router.get("/students", tags=["tests"])
 async def test():
     # Test end point to verify server functionality.
-    print("hi from test end point")
-    return "hi from test end point :)"
+    print({"msg": "test student router is working!"})
+    return {"msg": "test student router is working!"}
 
 
 # curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
-@router.post("/students/add_student",tags=["students"])
+@router.post("/students/add_student", tags=["students"])
 async def add_student(student: Student):
     """
     Add a new student to the database.
-    :param student:
-    :param student (Student) :   The student object representing the new student to be added.
-    :return: A message confirming the successful addition of the student, with the student_id
+
+    Parameters:
+        student (Student): The student object containing information about the student to be added.
+
+    Returns:
+        dict or str: A dictionary with a success message and the student ID if the student is added successfully.
+                     If a student with the same ID already exists, returns a string indicating the conflict.
     """
     file_path = get_json_file_path('db_students.json')
-    if check_student_id_exists(file_path, str(student.id)):
+    if get_student_by_username(file_path, str(student.id)):
         return "Student with this ID already exists"
     updated_db = update_student(file_path, student)
     write_json(updated_db, file_path)
     return {"message": "Student added successfully", "student_id": student.id}
 
 
-# $ curl -X GET http://localhost:8000/get_student/3
+# curl -X GET http://localhost:8000/students/get_student/4
 
-@router.get("/students/get_student/{student_id}",tags=["students"])
+
+@router.get("/students/get_student/{student_id}", tags=["students"])
 async def get_student(student_id: int = Path(..., desciption="Enter the id of the student")):
     """
      Retrieve information about a specific student by their ID.
+    :param student_id:
     :param student_id (int): The ID of the student to retrieve.
     :return: dict: Information about the student with the specified ID.
 
@@ -55,10 +61,9 @@ async def get_student(student_id: int = Path(..., desciption="Enter the id of th
     except Exception as e:
         return {"error": f"An error occurred: {e}"}
 
+# curl http://localhost:8000/students/get_students_in_class/bb
 
-# $ curl -X GET http://localhost:8000/get_students_in_class/Math
-
-@router.get("/students/get_students_in_class/{class_name}",tags=["students"])
+@router.get("/students/get_students_in_class/{class_name}", tags=["students"])
 async def get_students_in_class(class_name: str = Path(..., description="Enter the class")):
     """
         Retrieve all students belonging to a specific class.
@@ -78,7 +83,6 @@ async def get_students_in_class(class_name: str = Path(..., description="Enter t
         return {"error": "Database file not found"}
     except Exception as e:
         return {"error": f"An error occurred: {e}"}
-
 
 # $ curl -X GET http://localhost:8000/students/get_all_students
 @router.get("/students/get_all_students",tags=["students"])

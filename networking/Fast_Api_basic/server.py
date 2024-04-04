@@ -1,22 +1,22 @@
 from fastapi import FastAPI, Request
 
-from routers import students
-from routers import auth_user
+# from routers import students
+# from routers import auth_user
 
-app = FastAPI()
+server = FastAPI()
 
 # # # routes
-app.include_router(students.router)
+# app.include_router(students.router)
 # app.include_router(auth_user.router)
 
-@app.middleware("http")
+@server.middleware("http")
 async def log_req(request: Request, call_next):
     print(f'got req. to: {request.url}, method: {request.method}')
     response = await call_next(request)
     return response
 
 
-@app.get("/",tags=["tests"])
+@server.get("/",tags=["tests"])
 async def test():
     """
     Test endpoint to check if the API is running.

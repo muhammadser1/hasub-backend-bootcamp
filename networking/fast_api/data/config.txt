@@ -1,0 +1,2 @@
+jwt_secret=d640ef9b7d9a43aa415dc6242585899a
+algorithm= HS256
