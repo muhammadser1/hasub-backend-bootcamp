@@ -1,8 +1,10 @@
-from fastapi import APIRouter, Path
+from fastapi import APIRouter, Path, Request
 
 from models.student import Student
+from utils.auth_utils.jwt_manager import check_token
 from utils.json_file_utils import *
 from utils.student_utils.get_student_by_username import get_student_by_username
+from utils.student_utils.parse_student_from_request import parse_student_from_request
 from utils.student_utils.update_student import update_student
 
 router = APIRouter()
@@ -15,25 +17,40 @@ async def test():
     return {"msg": "test student router is working!"}
 
 
+# # curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
+# @router.post("/students/add_student", tags=["students"])
+# async def add_student(student: Student):
+#     """
+#     Add a new student to the database.
+#
+#     Parameters:
+#         student (Student): The student object containing information about the student to be added.
+#
+#     Returns:
+#         dict or str: A dictionary with a success message and the student ID if the student is added successfully.
+#                      If a student with the same ID already exists, returns a string indicating the conflict.
+#     """
+#     file_path = get_json_file_path('db_students.json')
+#     if get_student_by_username(file_path, str(student.id)):
+#         return "Student with this ID already exists"
+#     updated_db = update_student(file_path, student)
+#     write_json(updated_db, file_path)
+#     return {"message": "Student added successfully", "student_id": student.id}
 # curl -XPOST http://localhost:8000/students/add_student -d '{"id":1,"name":"aaa","age":10,"classes":["aa","bb"]}' -H "Content-Type: application/json"
+# "$ curl -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEiLCJ1c2VyIHJvbGUiOiJhZG1pbiJ9.ej4MIs3H05mGVMdKK-vOmN4v-o2ZFhoQYFgGMrflwI4" -H "Content-Type: application/json" -d '{"id": 123, "name": "John Doe", "age": 20, "classes": ["Math", "Science"]}' http://localhost:8000/students/add_student"
 @router.post("/students/add_student", tags=["students"])
-async def add_student(student: Student):
-    """
-    Add a new student to the database.
-
-    Parameters:
-        student (Student): The student object containing information about the student to be added.
-
-    Returns:
-        dict or str: A dictionary with a success message and the student ID if the student is added successfully.
-                     If a student with the same ID already exists, returns a string indicating the conflict.
-    """
+async def add_student(request: Request, username: str):
+    student = await parse_student_from_request(request)
     file_path = get_json_file_path('db_students.json')
-    if get_student_by_username(file_path, str(student.id)):
-        return "Student with this ID already exists"
-    updated_db = update_student(file_path, student)
-    write_json(updated_db, file_path)
-    return {"message": "Student added successfully", "student_id": student.id}
+    token_path = get_json_file_path('db_tokens.json')
+    if check_token(request, username, token_path) == "admin":
+        if get_student_by_username(file_path, str(student.id)):
+            return "Student with this ID already exists"
+        updated_db = update_student(file_path, student)
+        write_json(updated_db, file_path)
+        return {"message": "Student added successfully", "student_id": student.id}
+    else:
+        return {"message": "token"}
 
 
 # curl -X GET http://localhost:8000/students/get_student/4
@@ -61,6 +78,7 @@ async def get_student(student_id: int = Path(..., desciption="Enter the id of th
     except Exception as e:
         return {"error": f"An error occurred: {e}"}
 
+
 # curl http://localhost:8000/students/get_students_in_class/bb
 
 @router.get("/students/get_students_in_class/{class_name}", tags=["students"])
@@ -84,8 +102,9 @@ async def get_students_in_class(class_name: str = Path(..., description="Enter t
     except Exception as e:
         return {"error": f"An error occurred: {e}"}
 
+
 # $ curl -X GET http://localhost:8000/students/get_all_students
-@router.get("/students/get_all_students",tags=["students"])
+@router.get("/students/get_all_students", tags=["students"])
 async def get_all_students():
     """
     The function returns all the students in the database.

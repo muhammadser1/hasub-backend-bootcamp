@@ -1,13 +1,12 @@
 from fastapi import FastAPI, Request
+from routers import student, auth_user
 
-from routers import student
-# from routers import auth_user
 
 app = FastAPI()
 
 # # # routes
 app.include_router(student.router)
-# app.include_router(auth_user.router)
+app.include_router(auth_user.router)
 
 @app.middleware("http")
 async def log_req(request: Request, call_next):
