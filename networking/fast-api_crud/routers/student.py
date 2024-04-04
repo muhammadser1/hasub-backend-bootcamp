@@ -100,4 +100,4 @@ async def get_all_students():
     except FileNotFoundError:
         return {"error": "Database file not found"}
     except Exception as e:
-        return {"error": f"An error occurred: {e}"}
+        return {"error": f"An  error occurred: {e}"}
