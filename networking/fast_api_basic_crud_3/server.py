@@ -1,8 +1,6 @@
 from fastapi import FastAPI, Request
-from routers import student_router, auth_user
 
-# , auth_user
-
+from routers import auth_user, student_router
 
 app = FastAPI()
 
@@ -25,3 +23,4 @@ async def test():
     """
     return {"message": "API is working!"}
 # curl -XPOST http://localhost:8000/auth/sign_up -d '{"username":"sarrm","password":"124"}' -H "Content-Type: application/json"
+
