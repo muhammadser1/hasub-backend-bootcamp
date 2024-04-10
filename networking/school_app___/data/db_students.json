@@ -74,5 +74,23 @@
         "classes": [
             "string"
         ]
+    },
+    "1": {
+        "id": 1,
+        "name": "John",
+        "age": 20,
+        "classes": [
+            "Math",
+            "Science"
+        ]
+    },
+    "1": {
+        "id": 1,
+        "name": "John",
+        "age": 20,
+        "classes": [
+            "Math",
+            "Science"
+        ]
     }
 }

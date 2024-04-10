@@ -29,6 +29,7 @@ def add_student(student: Student, user_data: str = Depends(check_admin_token)):
     :param user_data:
     :return:
     """
+    print("asdad")
     if student_exists_in_db(student_id=student.id):
         print("message: Student with this ID already exists")
         return {"message": "Student with this ID already exists"}

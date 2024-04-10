@@ -1,0 +1,20 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Alice",
+        "age": 20,
+        "classes": [
+            "Math",
+            "Science"
+        ]
+    },
+    "2": {
+        "id": 2,
+        "name": "Bob",
+        "age": 21,
+        "classes": [
+            "English",
+            "History"
+        ]
+    }
+}

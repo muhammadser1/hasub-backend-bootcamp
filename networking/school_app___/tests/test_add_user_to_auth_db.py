@@ -3,7 +3,6 @@ import pytest
 from models.user import User
 from utils.auth_utils.user_operations import add_user_to_auth_db
 
-db_user_path = "data/db_users.json"
 
 
 def test_add_user_to_auth_db():
