@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Depends, Path
+from fastapi import APIRouter, Depends, Path, Request
 
 from models.student import Student
-from utils.auth_utils.jwt_manager import check_token
+from utils.auth_utils.jwt_manager import check_token, check_admin_token
 from utils.file_operations import load_json, write_json
 from utils.students_utils.get_students_by_class import get_students_by_class
 from utils.students_utils.retrieve_student_by_username import retrieve_student_by_username
@@ -19,7 +19,7 @@ async def test():
 
 
 @router.delete("/students/delete_student_by_id", tags=["students"])
-async def delete_student(student_id: str):
+async def delete_student(student_id: str, token: str = Depends(check_admin_token)):
     db_student_path = "data/db_students.json"
     db_Students = load_json(db_student_path)
     if student_id in db_Students:
@@ -34,7 +34,8 @@ async def delete_student(student_id: str):
 
 
 @router.delete("/students/delete_all_students", tags=["students"])
-async def delete_all_students(token: str = Depends(check_token)):
+async def delete_all_students( token: str = Depends(check_token)):
+
     db_student_path = "data/db_students.json"
     db_Students = load_json(db_student_path)
     db_Students.clear()

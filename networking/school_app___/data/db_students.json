@@ -1,0 +1,78 @@
+{
+    "3": {
+        "id": 3,
+        "name": "Emma Davis",
+        "age": 17,
+        "classes": [
+            "Biology",
+            "Geography",
+            "Math"
+        ]
+    },
+    "4": {
+        "id": 4,
+        "name": "James Wilson",
+        "age": 16,
+        "classes": [
+            "Computer Science",
+            "Math",
+            "Computer Science"
+        ]
+    },
+    "5": {
+        "id": 5,
+        "name": "Sophia Martinez",
+        "age": 18,
+        "classes": [
+            "Spanish",
+            "French",
+            "Math"
+        ]
+    },
+    "6": {
+        "id": 6,
+        "name": "Ethan Taylor",
+        "age": 17,
+        "classes": [
+            "Art",
+            "Music"
+        ]
+    },
+    "7": {
+        "id": 7,
+        "name": "Olivia Anderson",
+        "age": 16,
+        "classes": [
+            "Physical Education",
+            "Health",
+            "Math"
+        ]
+    },
+    "8": {
+        "id": 8,
+        "name": "William Thomas",
+        "age": 18,
+        "classes": [
+            "Economics",
+            "Government"
+        ]
+    },
+    "9": {
+        "id": 9,
+        "name": "Ava Jackson",
+        "age": 17,
+        "classes": [
+            "Psychology",
+            "Sociology",
+            "Math"
+        ]
+    },
+    "10": {
+        "id": 10,
+        "name": "string",
+        "age": 0,
+        "classes": [
+            "string"
+        ]
+    }
+}

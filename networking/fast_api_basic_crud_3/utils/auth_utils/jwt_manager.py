@@ -54,14 +54,31 @@ def verify_jwt(user_jwt, username: str):
 def check_token(token: str, username: str):
     try:
         result = verify_jwt(token, username)
-        print(result)
-        if result == 'admin':
+        if result:
             return result
         unauthorized_exception = HTTPException(status_code=401, detail="Unauthorized access")
         raise unauthorized_exception
     except Exception as e:
         raise e
 
+def check_admin_token(username: str, tokens: str):
+    role = check_token(username,tokens)
+    if role == "admin":
+        return True
+    else:
+        raise HTTPException(status_code=403, detail="Forbidden, admin role required")
+def check_guest_token(username: str, tokens: str):
+    role = check_token(username,tokens)
+    if role == "guest":
+        return True
+    else:
+        raise HTTPException(status_code=403, detail="Forbidden, guest role required")
+def check_all_token(username: str, tokens: str):
+    role = check_token(username,tokens)
+    if role in ["admin", "guest", "all"]:
+        return True
+    else:
+        raise HTTPException(status_code=403, detail="Forbidden, all role required")
 
 def update_tokens_in_db(username: str, tokens: str):
     """
