@@ -6,8 +6,8 @@ from utils.decorators import log_function_call
 app = FastAPI()
 
 # # # # routes
-app.include_router(student_router.router)
-app.include_router(auth_router.router)
+# app.include_router(student_router.router)
+# app.include_router(auth_router.router)
 # app.include_router(test.router)
 
 

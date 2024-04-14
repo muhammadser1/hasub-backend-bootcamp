@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from routers import auth_router
+from routers import auth_router, chating_websocket
 from routers.student_routers import read_student_router,create_student_router,delete_student_class
 from utils.decorators import log_function_call
 app = FastAPI()
@@ -10,7 +10,7 @@ app.include_router(auth_router.router)
 app.include_router(read_student_router.router)
 app.include_router(create_student_router.router)
 app.include_router(delete_student_class.router)
-
+app.include_router(chating_websocket.app)
 # @app.middleware("http")
 # async def log_req(request: Request, call_next):
 #     print(f'log_req: got req. to: {request.url}, method: {request.method}')
