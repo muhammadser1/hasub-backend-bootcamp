@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, Depends
 
 from models.student import Student
@@ -11,6 +10,7 @@ router = APIRouter()
 check_admin_token = role_authorization("admin")
 check_guest_token = role_authorization("guest")
 check_all_token = role_authorization("all")
+
 
 @router.get("/students/create", tags=["tests"])
 @log_function_call
@@ -29,7 +29,6 @@ def add_student(student: Student, user_data: str = Depends(check_admin_token)):
     :param user_data:
     :return:
     """
-    print("asdad")
     if student_exists_in_db(student_id=student.id):
         print("message: Student with this ID already exists")
         return {"message": "Student with this ID already exists"}

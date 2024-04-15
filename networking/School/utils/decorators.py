@@ -25,6 +25,6 @@ def log_function_call(func):
             print(f"{func.__name__} function success")
             return result
         except Exception as e:
-            print(f"{func.__name__} function fails")
+            print(f"{func.__name__} function fails",e)
 
     return wrapper
