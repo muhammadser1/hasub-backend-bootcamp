@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Login Page</h1>
+
+<form id="login-form" action="/login" method="POST">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <button type="button" onclick="login()">Login</button>
+</form>
+
+<script>
+function login() {
+
+    fetch('http://localhost:8000/auth_user')
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("username").value = "success";
+        console.log('Login successful');
+        // Redirect or show success message
+      } else {
+        console.error('Login failed');
+        // Display error message
+      }
+      console.log('Hi');
+      return response.json(); // Return the JSON response
+    })
+    .then(data => {
+      console.log('Response data:', data); // Log the response data
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+</script>
+
+</body>
+</html>

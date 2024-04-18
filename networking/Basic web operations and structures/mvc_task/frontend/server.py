@@ -17,14 +17,9 @@ def test():
 
 @app.get("/login", response_class=HTMLResponse)
 async def login(request: Request):
-    # Define the data to pass to the template
-    data = {"title": "Welcome to My Website" }
-
-    # Render the "index2.html" template with the provided data
     return templates.TemplateResponse("login.html", {"request": request, **data})
 
 
 @app.get("/show_sales", response_class=HTMLResponse)
 async def showSales(request: Request):
-
     return templates.TemplateResponse("show_sales.html", {"request": request})
