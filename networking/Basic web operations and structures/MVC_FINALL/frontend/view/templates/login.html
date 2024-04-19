@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+
+<h1>Login Page</h1>
+
+<form id="login-form">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <button type="button" onclick="login()">Login</button>
+</form>
+
+<script>
+function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const credentials = {
+    username: username,
+    password: password,
+    role:"admin"
+  };
+
+  fetch('http://localhost:8989/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Login successful');
+      window.location.href = '/show_sales';
+    } else {
+      console.error('Login failed');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -16,3 +16,4 @@ def test():
 def get_sales_data():
     sales_data = load_json("database/db_sales.json")
     return sales_data
+
