@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from utils.json_handler import load_json
+# from utils.json_handler import load_json
 
 router = APIRouter()
 

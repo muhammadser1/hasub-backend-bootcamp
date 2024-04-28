@@ -19,14 +19,14 @@ def test():
 
 @router.post("/login", tags=["LoginPage"])
 async def login(login_data: User):
-    existing_user = retrieve_user_from_auth_db(login_data)
-    print(login_data)
-    if existing_user is None:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-
-    stored_password = existing_user["password"]
-
-    if not verify_password(stored_password, login_data.password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+    # existing_user = retrieve_user_from_auth_db(login_data)
+    # print(login_data)
+    # if existing_user is None:
+    #     raise HTTPException(status_code=401, detail="Invalid credentials")
+    #
+    # stored_password = existing_user["password"]
+    #
+    # if not verify_password(stored_password, login_data.password):
+    #     raise HTTPException(status_code=401, detail="Invalid credentials")
 
     return {"message": "Login successful"}

@@ -16,5 +16,5 @@ async def login(request: Request):
 
 
 @router.get("/logout", response_class=HTMLResponse)
-async def serve_img():
+async def serve_im3g():
     return FileResponse("view/static/my_image.jpg")
