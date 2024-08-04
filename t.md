@@ -39,10 +39,11 @@ You can see your quota usage on the [Quotas](https://console.developers.google.c
 -   `telegram.ext`: An extension of the `telegram` package, providing higher-level classes and functions for managing conversation flow and handling user inputs. such as: ConversationHandler,CommandHandler,MessageHandler...
 - `googleapiclient` is a Python library that provides a simple and consistent way to interact with Google APIs. It allows developers to easily build and manage requests to various Google services, such as YouTube...
 ### Connecting to the YouTube API
+```python
+
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from setting.config import config
-```python
 def connect_to_youtube_api():
     try:
         youtube = build('youtube', 'v3', developerKey=config.YOUTUBE_API)
